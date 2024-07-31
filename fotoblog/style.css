@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62.5%;
+  background-color: var(--color-base-white);
+
+  --color-base-white: #ffffff;
+  --color-base-gray-100: #f5f5f5;
+  --color-base-gray-300: hsl(240, 6%, 58%);
+  --color-base-gray-700: #323232;
+  --color-base-gray-900: #202024;
+}
+
+html,
+body,
+input,
+button {
+  font-family: "Mulish", sans-serif;
+  font-size: 1.6rem;
+}
+
+#app {
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+  height: 100vh;
+}
+
+.container {
+  padding: 1.6rem 3.2rem;
+  width: min(112rem, 100%);
+  margin-inline: auto;
+}
+
+main {
+  overflow-y: scroll;
+  background-color: var(--color-base-gray-100);
+}
+
+header,
+header nav ul {
+  display: flex;
+  align-items: center;
+  /* gap: 3.5rem; */
+  gap: 7.2rem;
+  font-size: 1.7rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+header nav ul li {
+  list-style: none;
+  color: var(--color-base-gray-300);
+}
+
+header nav ul li.active {
+  color: var(--color-base-gray-900);
+}
+
+header form {
+  flex: 1;
+}
+
+.wrapper-input label {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.wrapper-input input {
+  width: 100%;
+  padding: 1.6rem;
+  border: none;
+  background-color: var(--color-base-gray-100);
+  border-radius: 0.6rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.wrapper-input input::placeholder {
+  opacity: 0.56;
+  color: var(--color-base-gray-700);
+}
+
+header .avatar {
+  width: 4.8rem;
+  height: 4.8rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* galeria */
+
+main h1 {
+  padding-top: 2.4rem;
+  font-size: 2.4rem;
+}
+
+.gallery {
+  margin-top: 4rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.2rem;
+}
+
+.item {
+  background-color: var(--color-base-white);
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+
+.item img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+
+  filter: grayscale(50%);
+
+  /* transition-property: transform, filter;
+  transition-duration: 0.3;
+  transition-delay: 0.2;
+  transition-timing-function: ease-out; */
+
+  transition: all 0.3s 0.2s ease-out;
+}
+
+.item img:hover {
+  filter: hue-rotate(7deg) contrast(101%) saturate(200%);
+  transform: scale(1.1) rotate(-2deg);
+  cursor: pointer;
+}
+
+.details {
+  padding: 2.2rem;
+  background-color: var(--color-base-white);
+  z-index: 1;
+  position: relative;
+}
+
+.details h2 {
+  font-size: 1.8rem;
+}
+
+.tags {
+  margin-top: 1.2rem;
+}
+
+.tags span {
+  padding: 0.6rem;
+  background-color: var(--color-base-gray-100);
+  border-radius: 0.4rem;
+
+  line-height: 0;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+/* footer */
+
+footer p {
+  text-align: center;
+  font-weight: 600;
+  padding: 1.6rem;
+  color: var(--color-base-gray-700);
+}
+
+/* Animaçães */
+
+header {
+  --startY: -100%;
+  animation: move 0.5s;
+}
+
+footer {
+  --startY: 100%;
+  animation: move 0.5s;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(var(--startY));
+  }
+}
+
+.item {
+  --delay: 0.4s;
+  animation: appear 0.4s var(--delay) backwards;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  50% {
+    opacity: 1.2;
+  }
+}
+
+/* Minha resolução */
+
+/* .section-galeria h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 3.8rem;
+  margin-top: 2rem;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.2rem;
+  margin-block: 3.6rem 6.4rem;
+}
+
+.card {
+  background-color: var(--color-base-white);
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card-body {
+  padding: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  color: var(--color-base-gray-900);
+}
+
+.card-body h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 3rem;
+}
+
+.card-body p {
+  padding: 0.8rem;
+  border-radius: 0.6rem;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  background-color: var(--color-base-gray-100);
+  width: min-content;
+} */

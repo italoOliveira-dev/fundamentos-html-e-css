@@ -1,0 +1,65 @@
+body {
+  background-color: mediumpurple;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: repeat(3, max-content);
+  gap: 1rem;
+}
+
+.square {
+  width: 4rem;
+  height: 4rem;
+  background-color: white;
+  opacity: 0.6;
+}
+
+.a1 {
+  animation-name: move;
+  animation-duration: 1s;
+  animation-fill-mode: backwards;
+  animation-direction: normal;
+}
+
+.a2 {
+  animation-name: move;
+  animation-duration: 1s;
+  animation-fill-mode: backwards;
+  animation-direction: alternate;
+  animation-iteration-count: 5;
+}
+
+.a3 {
+  /* animation-name: move, blink;
+  animation-duration: 1s, 0.2s;
+  animation-fill-mode: backwards;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+  animation-timing-function: steps(10); */
+
+  animation: move 1s backwards alternate infinite, blink 0.2s alternate infinite;
+}
+
+.a3:hover {
+  animation-play-state: paused;
+}
+
+@keyframes move {
+  from {
+  }
+
+  to {
+    transform: translateX(calc(100vw - 100% - 16px));
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}

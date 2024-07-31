@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  --webkit-font-smoothing: antialiased;
+  --moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-family: "Mulish", sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #121214;
+  color: white;
+
+  display: grid;
+  justify-content: center;
+  gap: 6.3rem;
+
+  padding-block: 10rem;
+}
+
+/* header {
+  
+  padding-top: 10rem;
+} */
+
+.titulo_principal {
+  font-size: 5.8rem;
+  font-weight: 900;
+  margin-bottom: 8px;
+  color: #02799d;
+}
+
+.sub_titulo {
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: #e1e1e6;
+  /* margin-bottom: 6.2rem; */
+}
+
+/* main {
+  padding: 7.5rem 5rem;
+  width: 120rem;
+  margin-inline: auto;
+}   */
+
+.galaxies {
+  display: grid;
+  grid-template-columns: repeat(3, 33.6rem);
+  grid-template-rows: repeat(2, min-width(44.8rem));
+  gap: 4.5rem 6rem;
+}
+
+.galaxie {
+  background-color: #202024;
+  border: 2px solid #323238;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.galaxie img {
+  width: 100%;
+  /* object-fit: cover; */
+  /* border-radius: 8px 8px 0 0; */
+}
+
+.galaxie > div {
+  padding: 2.4rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.galaxie h2 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #e1e1e6;
+}
+
+.galaxie p {
+  font-size: 2rem;
+  color: #c4c4cc;
+}
